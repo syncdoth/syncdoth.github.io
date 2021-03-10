@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Sehyun's Portfolio # the website title (if blank, full name will be used instead)
+title: Academic Portfolio # the website title (if blank, full name will be used instead)
 first_name: Sehyun
 last_name: Choi
 email: schoiaj@connect.ust.hk
@@ -60,7 +60,6 @@ linkedin_username: sehyun-choi-synch
 # work_url: # work page URL
 # keybase_username: # your keybase user name
 # wikidata_id: # your wikidata id
-# dblp_url: # your DBLP profile url
 
 contact_note: >
   Contact via email for the quickest reply.
@@ -88,11 +87,11 @@ disqus_shortname: syncdoth # put your disqus shortname
 # -----------------------------------------------------------------------------
 
 collections:
-  education:
+  experiences:
     defaults:
       layout: post
     output: true
-    permalink: /education/:path/
+    permalink: /experiences/:path/
   projects:
     output: true
     permalink: /projects/:path/
@@ -102,8 +101,7 @@ collections:
     output: true
     permalink: /news/:path/
 
-education_limit: 5
-news_limit: 5
+experiences_limit: 5
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
