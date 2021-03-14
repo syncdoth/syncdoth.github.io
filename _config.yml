@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Academic Portfolio # the website title (if blank, full name will be used instead)
+title: Sehyun's Portfolio # the website title (if blank, full name will be used instead)
 first_name: Sehyun
 last_name: Choi
 email: schoiaj@connect.ust.hk
@@ -71,8 +71,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Sync.Rev  # your blog must have a name for it to show up in the nav bar
-blog_description: reviews of various noteworthy technologies
+blog_name: Sehyun's Technical Reviews  # your blog must have a name for it to show up in the nav bar
+blog_description: reviews of various different technologies worth noting
 permalink: /blog/:year/:title/
 
 # Pagination
