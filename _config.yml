@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Academic Portfolio # the website title (if blank, full name will be used instead)
+title: Sehyun's Portfolio # the website title (if blank, full name will be used instead)
 first_name: Sehyun
 last_name: Choi
 email: schoiaj@connect.ust.hk
@@ -11,7 +11,6 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: >
   Powered by <a href="http://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-  Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 icon: 🔥 # the emoji used as the favicon
 url:  # the base hostname & protocol for your site
@@ -73,8 +72,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: al-folio  # your blog must have a name for it to show up in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_name: Sehyun's Technical Reviews  # your blog must have a name for it to show up in the nav bar
+blog_description: reviews of various different technologies worth noting
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -82,7 +81,7 @@ pagination:
   enabled: true
 
 # Comments
-disqus_shortname: al-folio # put your disqus shortname
+disqus_shortname: syncdoth # put your disqus shortname
 
 # -----------------------------------------------------------------------------
 # Collections
