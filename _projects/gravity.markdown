@@ -5,19 +5,17 @@ description: My first Python Toy Project
 img: /assets/img/gravity/play.gif
 importance: 4
 github: https://github.com/syncdoth/Gravity-Modulator
-category: fun
 ---
 After taking an introductory class to Python (COMP 1021 at HKUST, 2017 Fall),
 I was fascinated by what programming can do, and wanted to play around with it
 during the free time. The last project of the coursework was about creating a
 shooting game, which required knowledge about GUI programming using `turtle`
-module and screen updating, based on time derivatives, $$ dy/dt $$. I found that
+module and screen updating, based on time derivatives, $dy/dt$. I found that
 this would be a perfect environment to test out some simple physics simulations
 using the law of kinematics!
 
 ***
-
-<img class="img-fluid rounded z-depth-0" src="{{ site.baseurl }}/assets/img/gravity/start_page.png">
+<img src="/assets/img/gravity/start_page.png" width="600" height="500" />
 
 ## Idea
 
@@ -31,7 +29,7 @@ derivative of the ball is defined by the initial velocity of the ball, gravity,
 and the elasticity of the ball: the ball was simulated to have elastic collision
 with the walls and the floor.
 
-<img class="img-fluid rounded z-depth-0" src="{{ site.baseurl }}/assets/img/gravity/play.gif">
+<img src="/assets/img/gravity/play.gif" width="600" height="500" />
 
 ***
 ## In Hindsight...
