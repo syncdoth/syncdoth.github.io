@@ -65,7 +65,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: Sehyun's Technical Reviews  # your blog must have a name for it to show up in the nav bar
+blog_name: Sync.Rev  # your blog must have a name for it to show up in the nav bar
 blog_description: reviews of various different technologies worth noting
 permalink: /blog/:year/:title/
 
@@ -81,16 +81,16 @@ disqus_shortname: syncdoth # put your disqus shortname
 # -----------------------------------------------------------------------------
 
 collections:
-  experiences:
+  education:
     defaults:
       layout: post
     output: true
-    permalink: /experiences/:path/
+    permalink: /education/:path/
   projects:
     output: true
     permalink: /projects/:path/
 
-experiences_limit: 5
+education_limit: 5
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
