@@ -72,7 +72,7 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # -----------------------------------------------------------------------------
 
 blog_name: Sync.Rev  # your blog must have a name for it to show up in the nav bar
-blog_description: reviews of various different technologies worth noting
+blog_description: reviews of various noteworthy technologies
 permalink: /blog/:year/:title/
 
 # Pagination
