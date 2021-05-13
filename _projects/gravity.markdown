@@ -15,7 +15,8 @@ this would be a perfect environment to test out some simple physics simulations
 using the law of kinematics!
 
 ***
-<img src="/assets/img/gravity/start_page.png" width="600" height="500" />
+
+<img class="img-fluid rounded z-depth-0" src="{{ site.baseurl }}/assets/img/gravity/start_page.png">
 
 ## Idea
 
@@ -29,7 +30,7 @@ derivative of the ball is defined by the initial velocity of the ball, gravity,
 and the elasticity of the ball: the ball was simulated to have elastic collision
 with the walls and the floor.
 
-<img src="/assets/img/gravity/play.gif" width="600" height="500" />
+<img class="img-fluid rounded z-depth-0" src="{{ site.baseurl }}/assets/img/gravity/play.gif">
 
 ***
 ## In Hindsight...
