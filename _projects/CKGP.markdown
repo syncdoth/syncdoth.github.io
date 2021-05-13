@@ -19,4 +19,4 @@ EMNLP 2021 submissions. Just a simple few highlights:
 
 ***
 
-Image credit: [](https://oldmanmackie.wordpress.com/2014/10/12/shattering-some-common-sense-positions-on-youth-unemployment/)
+Image credit: ![alt text](https://oldmanmackie.wordpress.com/2014/10/12/shattering-some-common-sense-positions-on-youth-unemployment/)

@@ -10,7 +10,7 @@ After taking an introductory class to Python (COMP 1021 at HKUST, 2017 Fall),
 I was fascinated by what programming can do, and wanted to play around with it
 during the free time. The last project of the coursework was about creating a
 shooting game, which required knowledge about GUI programming using `turtle`
-module and screen updating, based on time derivatives, $dy/dt$. I found that
+module and screen updating, based on time derivatives, $$ dy/dt $$. I found that
 this would be a perfect environment to test out some simple physics simulations
 using the law of kinematics!
 
