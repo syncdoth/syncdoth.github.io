@@ -102,6 +102,7 @@ collections:
     permalink: /news/:path/
 
 education_limit: 5
+news_limit: 5
 
 # -----------------------------------------------------------------------------
 # Jekyll settings
