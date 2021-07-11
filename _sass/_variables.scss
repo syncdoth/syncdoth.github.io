@@ -22,12 +22,14 @@ $light-purple-color:  lighten($purple-color, 25%);
 $pink-color:          #f92080 !default;
 $pink-color-light:    #ffdddd !default;
 $yellow-color:        #efcc00 !default;
+$indigo-color:        #7B68EE !default;
+$light-indigo-color:  #a397e7 !default;
 
 $grey-color:          #828282 !default;
 $grey-color-light:    lighten($grey-color, 40%);
 $grey-color-dark:     darken($grey-color, 25%);
 
-$white-color: #ffffff !default;
+$white-color: rgb(244, 250, 255) !default;
 $black-color: #000000 !default;
 
 
