@@ -5,6 +5,7 @@ description: My first Python Toy Project
 img: /assets/img/gravity/play.gif
 importance: 4
 github: https://github.com/syncdoth/Gravity-Modulator
+category: fun
 ---
 After taking an introductory class to Python (COMP 1021 at HKUST, 2017 Fall),
 I was fascinated by what programming can do, and wanted to play around with it

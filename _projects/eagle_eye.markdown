@@ -5,6 +5,7 @@ description: AI Lab Korea Open Lab 8th Research
 img: /assets/img/eagle-eye/third.png
 importance: 2
 github: https://github.com/syncdoth/Eagle-Eye-Pneumonia-Detection
+category: work
 ---
 
 Since this project is very well documented in the official website, I will only
