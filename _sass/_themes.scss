@@ -6,6 +6,8 @@
   --global-bg-color: #{$white-color};
   --global-code-bg-color: #{$code-bg-color-light};
   --global-text-color: #{$black-color};
+  --global-text-color-light: #{$grey-color};
+  --global-title-color: #{$indigo-color};
   --global-theme-color: #{$indigo-color};
   --global-hover-color: #{$light-indigo-color};
   --global-footer-bg-color: #{$grey-color-dark};
@@ -24,16 +26,17 @@
 }
 
 html[data-theme='dark'] {
-  --global-bg-color: #{$night-color};
-  --global-code-bg-color: #{$code-bg-color-dark};
-  --global-text-color: #{$grey-color-light};
-  --global-text-color-light: #{$grey-color-light};
-  --global-theme-color: #{$pastel-blue-color};
-  --global-hover-color: #{$gold-color};
-  --global-footer-bg-color: #{$grey-color-light};
-  --global-footer-text-color: #{$grey-color-dark};
-  --global-footer-link-color: #{$black-color};
-  --global-distill-app-color: #{$grey-color-light};
+  --global-bg-color: #{$atom-one-dark-background};
+  --global-code-bg-color: #{$atom-one-dark-sideareas};
+  --global-text-color: #{$atom-one-dark-normal};
+  --global-text-color-light: #{$atom-one-dark-light};
+  --global-title-color: #{$atom-one-dark-keyword};
+  --global-theme-color: #{$atom-one-dark-definition};
+  --global-hover-color: #{$atom-one-dark-keyword};
+  --global-footer-bg-color: #{$atom-one-dark-matched_p};
+  --global-footer-text-color: #{$atom-one-dark-normal};
+  --global-footer-link-color: #{$atom-one-dark-light};
+  --global-distill-app-color: #{$atom-one-dark-light};
 
   .fa-sun {
     padding-left: 10px;
