@@ -98,10 +98,10 @@ _styles: >
 
 | Course     | Credit | Description |
 |------------|--------|-------------|
-| BIEN 1010  | 3      |             |
-| COMP 4332  | 3      |             |
-| COMP 4641  | 3      |             |
-| LANG 1122  | 3      |             |
+| BIEN 1010  | 3      | Intro to Bioengineering. Easy to ace, if you put decent enough of work into it. |
+| COMP 4332  | 3      | Big Data Mining Course. Main focus was information retrieval and the utility of ML for that purpose. |
+| COMP 4641  | 3      | Social Network Analysis course. Very interesting concepts are introduced including network (graph) analysis. |
+| LANG 1122  | 3      | Chinese level 3: much harder than it seems... :sweat: |
 
 ## Year 4
 
