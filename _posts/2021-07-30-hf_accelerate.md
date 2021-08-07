@@ -112,17 +112,17 @@ referring to the `accelerator.save` at
 [here](https://github.com/huggingface/accelerate/blob/b08fd560a4d6b7427f9fbb51a767393699afbd95/src/accelerate/utils.py#L270):
 
 {% highlight python linenos %}
-def save(obj, f):
-    """
-    Save the data to disk. Use in place of :obj:`torch.save()`.
-    Args:
-        obj: The data to save
-        f: The file (or file-like object) to use to save the data
-    """
-    if AcceleratorState().distributed_type == DistributedType.TPU:
-        xm.save(obj, f)
-    elif AcceleratorState().local_process_index == 0:
-        torch.save(obj, f)
+  def save(obj, f):
+      """
+      Save the data to disk. Use in place of :obj:`torch.save()`.
+      Args:
+          obj: The data to save
+          f: The file (or file-like object) to use to save the data
+      """
+      if AcceleratorState().distributed_type == DistributedType.TPU:
+          xm.save(obj, f)
+      elif AcceleratorState().local_process_index == 0:
+          torch.save(obj, f)
 {% endhighlight %}
 
 Note that `AcceleratorState()` is not a class bound property, but a singleton class
@@ -130,27 +130,27 @@ that all instances of this class have the same state. Therefore, we can write a
 custom code to save the actual model wrapped by `torch.DistributedDataParallel`:
 
 {% highlight python linenos %}
-from accelerate.state import AcceleratorState
-from accelerate.utils import save
+  from accelerate.state import AcceleratorState
+  from accelerate.utils import save
 
-def custom_save(model, f, save_module_only=False):
-    """
-    Save the data to disk. Use in place of :obj:`torch.save()`.
-    Args:
-        model: pytorch model. DistributedDataParallel class.
-        f: The file (or file-like object) to use to save the data
-        save_module_only: save the wrapped module only.
-    """
-    if not save_module_only:
-        save(model, f)
-    else:
-        torch.save(model.module, f)
+  def custom_save(model, f, save_module_only=False):
+      """
+      Save the data to disk. Use in place of :obj:`torch.save()`.
+      Args:
+          model: pytorch model. DistributedDataParallel class.
+          f: The file (or file-like object) to use to save the data
+          save_module_only: save the wrapped module only.
+      """
+      if not save_module_only:
+          save(model, f)
+      else:
+          torch.save(model.module, f)
 
-# save
-custom_save(model, 'model.pt', save_module_only=True)
-# ...
-# load
-loaded_model = torch.load('model.pt')
+  # save
+  custom_save(model, 'model.pt', save_module_only=True)
+  # ...
+  # load
+  loaded_model = torch.load('model.pt')
 {% endhighlight %}
 
 
