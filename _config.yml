@@ -60,6 +60,7 @@ scholar_userid: I_wmwsUAAAAJ
 # work_url: # work page URL
 # keybase_username: # your keybase user name
 # wikidata_id: # your wikidata id
+# dblp_url: # your DBLP profile url
 
 contact_note: >
   Contact via email for the quickest reply.
@@ -111,7 +112,7 @@ news_limit: 5
 # Markdown and syntax highlight
 markdown: kramdown
 highlighter: rouge
-highlight_theme: onedark  # https://github.com/jwarby/jekyll-pygments-themes
+highlight_theme: onedark  # https://github.com/syncdoth/jekyll-pygments-themes
 kramdown:
   input: GFM
   syntax_highlighter_opts:

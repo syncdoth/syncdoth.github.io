@@ -5,6 +5,7 @@ description:
 img: /assets/img/ml-study/study-ex.png
 importance: 1
 github: https://github.com/syncdoth/HKUST-KSA-ML-Study
+category: work
 ---
 
 ## Motivation

@@ -5,6 +5,7 @@ description: Undergraduate Research Opportunity Program Results of 2020 Summer
 img: /assets/img/bio-rnn/Force3.png
 importance: 3
 github: https://github.com/syncdoth/FORCE-RNN
+category: work
 ---
 
 During the summer of 2020, I participated in a project called
