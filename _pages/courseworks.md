@@ -94,7 +94,7 @@ _styles: >
 | COMP 4211  | 3      | Basic Machine Learning. The teaching and course contents are not bad, although a little bit more mathematical proof would have been good also. |
 | COMP 4901k | 3      | A NLP course that focuses on ML approaches. Good content with good balance with high level tech and mathematical theory. |
 
-### 2020-2021 Spring (Current)
+### 2020-2021 Spring
 
 | Course     | Credit | Description |
 |------------|--------|-------------|
@@ -106,3 +106,9 @@ _styles: >
 ## Year 4
 
 ### 2021-2022 Fall
+
+| Course     | Credit | Description |
+|------------|--------|-------------|
+| COMP 4471  | 3      | Deep learning in computer vision. Basically an adaptation of CS231n. |
+| SOSC 1960  | 3      | Interesting topics in psychology. |
+| LIFS 4950  | 3      | Neurochemistry course. |

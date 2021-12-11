@@ -2,10 +2,10 @@
 layout: page
 title: Founding a Machine Learning Study Club
 description:
-img: /assets/img/ml-study/study-ex.png
+img: assets/img/ml-study/study-ex.png
 importance: 1
 github: https://github.com/syncdoth/HKUST-KSA-ML-Study
-category: work
+category: academic
 ---
 
 ## Motivation

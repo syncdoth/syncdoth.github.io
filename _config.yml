@@ -64,13 +64,13 @@ scholar_userid: I_wmwsUAAAAJ
 # dblp_url: # your DBLP profile url
 # gitlab_username: # your GitLab user name
 # stackoverflow_id: #your stackoverflow id
-rss_icon: true
+rss_icon: false
 
 contact_note: >
   Contact via email for the quickest reply.
 
-google_analytics: UA-XXXXXXXXX # out your google-analytics code
-panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
+# google_analytics: UA-XXXXXXXXX # out your google-analytics code
+# panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 
 # -----------------------------------------------------------------------------
 # Blog

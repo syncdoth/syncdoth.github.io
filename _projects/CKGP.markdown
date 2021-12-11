@@ -4,7 +4,7 @@ title: "Research Project: Commonsense Knowledge"
 description: Undergraduate Research Opportunity Program Results of 2021 ~ onwards
 img: assets/img/ckgp/cs.png
 importance: 1
-category: work
+category: academic
 ---
 This project is not yet made public, as there exists anonymity period to the
 EMNLP 2021 submissions. Just a simple few highlights:

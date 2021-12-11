@@ -2,7 +2,7 @@
 layout: page
 title: "First Python Projects: Why not Physics?"
 description: My first Python Toy Project
-img: /assets/img/gravity/play.gif
+img: assets/img/gravity/play.gif
 importance: 4
 github: https://github.com/syncdoth/Gravity-Modulator
 category: fun
