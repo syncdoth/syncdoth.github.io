@@ -112,3 +112,10 @@ _styles: >
 | COMP 4471  | 3      | Deep learning in computer vision. Basically an adaptation of CS231n. |
 | SOSC 1960  | 3      | Interesting topics in psychology. |
 | LIFS 4950  | 3      | Neurochemistry course. |
+
+### 2021-2022 Spring
+
+| Course     | Credit | Description |
+|------------|--------|-------------|
+| COMP 4901W | 3      | Blockchain and Smart Contracts. Pretty hands-on with solidity. |
+| LANG 4030  | 3      | Required English course. |

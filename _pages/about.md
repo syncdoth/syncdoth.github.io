@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: Final Year Student @ <a href="https://hkust.edu.hk/home">HKUST</a>.
+description: First Year MPhil @ <a href="https://hkust.edu.hk/home">HKUST</a>.
 
 profile:
   align: right
@@ -21,9 +21,16 @@ and planning to pursue a higher degree after my bachelor's degree. My major
 interest lies in the field of **Natural Language Processing (NLP)**. Recently,
 I am growing my interest in **Explanable AI (XAI)**, and its' applications to NLP.
 
+My major research questions are:
+
+1. New Language Model Objective
+2. Knowledge Grounding
+3. Knowledge Transfer
+4. Robust AI
+
 This website is dedicated to the purpose of showcasing my experiences in
 coursework, industries, and research without the confinement of CV format.
 
 You can also take a look at my [CV](assets/pdf/CV.pdf).
 
-*(Last Update: July 10, 2021)*
+*(Last Update: March 5, 2022)*
