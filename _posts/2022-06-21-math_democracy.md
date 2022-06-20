@@ -10,7 +10,7 @@ As an engineer / scientist, it is sometimes easier for me to express my thoughts
 
 What is the objective of any kind of social structure or ideology? I believe it is to provide a framework for making decisions that set the course of humanity towards a certain direction. Ideally, we want the directions to point toward something ultimately “good” for humanity, be it justice, utopia, or whatever you want to call it.
 
-Let’s express this mathematically. Suppose there exists a space $$S \subset \R^n$$ such that can express the state of humankind, i.e., there are $$n$$ different independent variables that can succinctly and sufficiently capture all aspects of the humanity. (This is obviously impossible in the real world, but let’s suppose this is possible.)
+Let’s express this mathematically. Suppose there exists a space $$S \subset \mathbb{R}^n$$ such that can express the state of humankind, i.e., there are $$n$$ different independent variables that can succinctly and sufficiently capture all aspects of the humanity. (This is obviously impossible in the real world, but let’s suppose this is possible.)
 
 Let $$s \in S$$ be the state of humanity at some point. We believe there exists a singular ideal state for the humankind, $$u \in S$$. Then, the objective function of any rational society will be:
 
@@ -24,7 +24,7 @@ In real life, there is a big problem with this objective function: we do not kno
 
 ## Democratic Algorithm
 
-The way we do this in democracy is kind of similar to gradient descent. In gradient descent, we take the instantaneous gradient from the current state’s point on the loss surface, and move toward that direction. In democracy, we ask everyone what they think, and we take the direction that the most people agree with. So, we make policies and progress as a society in that direction iteratively. If we call this direction $$d \in \R^n$$, this iterative algorithm can be expressed as the following:
+The way we do this in democracy is kind of similar to gradient descent. In gradient descent, we take the instantaneous gradient from the current state’s point on the loss surface, and move toward that direction. In democracy, we ask everyone what they think, and we take the direction that the most people agree with. So, we make policies and progress as a society in that direction iteratively. If we call this direction $$d \in \mathbb{R}^n$$, this iterative algorithm can be expressed as the following:
 
 $$
 s_{t+1} := s_t + d_t
@@ -34,7 +34,7 @@ So now the question is, how do we get $$d$$?
 
 ### 1. Equal Vote
 
-In the most pure form of democracy, everyone should get an equal vote, and the direction should be just the sum of all opinions. Let $$P \subset \R^n$$ be a set of people in a society, and let $$v_i \in P$$ be an opinion vector, which represents person $$i$$’s opinion on what the humanity should do, or progress toward, to reach utopia. Then, $$d$$ should simply be:
+In the most pure form of democracy, everyone should get an equal vote, and the direction should be just the sum of all opinions. Let $$P \subset \mathbb{R}^n$$ be a set of people in a society, and let $$v_i \in P$$ be an opinion vector, which represents person $$i$$’s opinion on what the humanity should do, or progress toward, to reach utopia. Then, $$d$$ should simply be:
 
 $$
 d = \sum v_i
@@ -42,10 +42,10 @@ $$
 
 ### 2. + Meritocracy
 
-In a more realistic model, some people’s opinion could carry more weight, depending on their intelligence, education level, social status, etc. Let $$w \in \R^{|P|}$$ be a weight vector, which leads to $$d$$ being:
+In a more realistic model, some people’s opinion could carry more weight, depending on their intelligence, education level, social status, etc. Let $$ w \in \mathbb{R}^{ \mid P \mid } $$ be a weight vector, which leads to $$d$$ being:
 
 $$
-d = \sum_i^{|P|} w_i v_i
+d = \sum_i^{ |P| } w_i v_i
 $$
 
 ### 3. + Representativeness / Delegation
@@ -57,7 +57,7 @@ Being even more practical, in real world, we have representative democracy, in w
 However, this is still ideal: in real world, we cannot take the vector sum of opinions like as we do in math. Usually what happens is that we vote and select one vector that the most people agreed on. If we consider the weight vector $$w$$ to carry the number of votes that certain opinion got, $$d$$ is defined as
 
 $$
-d = v_i, \text{ where } i = \argmax (w)
+d = v_i, \text{ where } i = \arg \max (w)
 $$
 
 ## Analysis
