@@ -1,15 +1,16 @@
 ---
 layout: post
 title: Mathematical Notations for Democracy
-date: 2022-06-21 00:53:00
-description: As an engineer / scientist, it is sometimes easier for me to express my thoughts with solid mathematical definition and models. This is my attempt to express the core idea of democracy in terms of math.
+date: 2022-06-20 00:53:00
+description: This is my attempt to express the core idea of democracy in terms of math.
 ---
 
+As an engineer / scientist, it is sometimes easier for me to express my thoughts with solid mathematical definition and models.
 ## Objective Function of a Society
 
 What is the objective of any kind of social structure or ideology? I believe it is to provide a framework for making decisions that set the course of humanity towards a certain direction. Ideally, we want the directions to point toward something ultimately “good” for humanity, be it justice, utopia, or whatever you want to call it.
 
-Let’s express this mathematically. Suppose there exists a space $$S \sub \R^n$$ such that can express the state of humankind, i.e., there are $$n$$ different independent variables that can succinctly and sufficiently capture all aspects of the humanity. (This is obviously impossible in the real world, but let’s suppose this is possible.)
+Let’s express this mathematically. Suppose there exists a space $$S \subset \R^n$$ such that can express the state of humankind, i.e., there are $$n$$ different independent variables that can succinctly and sufficiently capture all aspects of the humanity. (This is obviously impossible in the real world, but let’s suppose this is possible.)
 
 Let $$s \in S$$ be the state of humanity at some point. We believe there exists a singular ideal state for the humankind, $$u \in S$$. Then, the objective function of any rational society will be:
 
@@ -33,7 +34,7 @@ So now the question is, how do we get $$d$$?
 
 ### 1. Equal Vote
 
-In the most pure form of democracy, everyone should get an equal vote, and the direction should be just the sum of all opinions. Let $$P \sub \R^n$$ be a set of people in a society, and let $$v_i \in P$$ be an opinion vector, which represents person $$i$$’s opinion on what the humanity should do, or progress toward, to reach utopia. Then, $$d$$ should simply be:
+In the most pure form of democracy, everyone should get an equal vote, and the direction should be just the sum of all opinions. Let $$P \subset \R^n$$ be a set of people in a society, and let $$v_i \in P$$ be an opinion vector, which represents person $$i$$’s opinion on what the humanity should do, or progress toward, to reach utopia. Then, $$d$$ should simply be:
 
 $$
 d = \sum v_i
