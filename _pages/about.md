@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: First Year MPhil @ <a href="https://hkust.edu.hk/home">HKUST</a>.
+subtitle: First Year MPhil @ <a href="https://hkust.edu.hk/home">HKUST</a>.
 
 profile:
   align: right
