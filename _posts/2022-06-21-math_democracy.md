@@ -3,6 +3,8 @@ layout: post
 title: Mathematical Notations for Democracy
 date: 2022-06-20 00:53:00
 description: This is my attempt to express the core idea of democracy in terms of math.
+comments: true
+categories: politics democracy
 ---
 
 As an engineer / scientist, it is sometimes easier for me to express my thoughts with solid mathematical definition and models.
