@@ -8,6 +8,7 @@ profile:
   align: right
   image: prof_pic.jpg
   address: >
+    <p><i>(Photo: Jeju-do, South Korea)</i></p>
     <p>Yongin-si, South Korea</p>
 
 education: true  # includes a list of education history
