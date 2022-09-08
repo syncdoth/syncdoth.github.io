@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: First Year MPhil @ <a href="https://hkust.edu.hk/home">HKUST</a>.
+subtitle: First Year Master of Philosophy (MPhil) @ <a href="https://hkust.edu.hk/home">HKUST</a>.
 
 profile:
   align: right

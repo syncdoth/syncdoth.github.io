@@ -33,7 +33,9 @@ layout: default
 
     {% if page.news -%}
     <!-- News -->
-    {%- include news.html %} {%- endif %} {% if page.selected_papers -%}
+    {%- include news.html %} {%- endif %} {% if page.education -%}
+    <!-- education -->
+    {%- include education.html %} {%- endif %} {% if page.selected_papers -%}
     <!-- Selected papers -->
     {%- include selected_papers.html %} {%- endif %} {%- if page.social %}
     <!-- Social -->
