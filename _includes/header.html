@@ -6,13 +6,16 @@
   >
     <div class="container">
       {% if page.permalink != '/' -%}
-      <span class="navbar-brand title font-weight-lighter">
-        {%- if site.title == "blank" -%}<span class="font-weight-bold"
-          >{{ site.first_name }}</span
-        >
-        {{ site.middle_name }} {{ site.last_name }}{%- else -%}{{ site.title
-        }}{%- endif -%}
-      </span>
+      <a
+        class="navbar-brand title font-weight-lighter"
+        href="{{ site.baseurl }}/"
+      >
+        {%- if site.title == "blank" -%} {%- if site.first_name -%}
+        <span class="font-weight-bold">{{- site.first_name -}}&nbsp;</span>
+        {%- endif -%} {%- if site.middle_name -%} {{- site.middle_name -}}&nbsp;
+        {%- endif -%} {%- if site.last_name -%} {{- site.last_name -}} {%- endif
+        -%} {%- else -%} {{- site.title -}} {%- endif -%}
+      </a>
       {%- elsif site.enable_navbar_social -%}
       <!-- Social Icons -->
       <div class="navbar-brand social">{% include social.html %}</div>
@@ -103,17 +106,24 @@
           </li>
           {%- endif -%} {%- endif -%} {% endfor -%} {%- if site.enable_darkmode
           %}
-
           <!-- Toogle theme mode -->
-          <div class="toggle-container">
-            <a id="light-toggle">
+          <li class="toggle-container">
+            <button id="light-toggle" title="Change theme">
               <i class="fas fa-moon"></i>
               <i class="fas fa-sun"></i>
-            </a>
-          </div>
+            </button>
+          </li>
           {%- endif %}
         </ul>
       </div>
     </div>
   </nav>
+  {% if site.enable_progressbar %}
+  <!-- Scrolling Progress Bar -->
+  <progress id="progress" value="0">
+    <div class="progress-container">
+      <span class="progress-bar"></span>
+    </div>
+  </progress>
+  {%- endif %}
 </header>

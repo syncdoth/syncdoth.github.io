@@ -7,6 +7,7 @@ subtitle: First Year Master of Philosophy (MPhil) @ <a href="https://hkust.edu.h
 profile:
   align: right
   image: prof_pic.jpg
+  image_circular: false # crops the image to make it circular
   address: >
     <p><i>(Photo: Jeju-do, South Korea)</i></p>
     <p>Yongin-si, South Korea</p>

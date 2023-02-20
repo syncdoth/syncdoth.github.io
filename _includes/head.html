@@ -37,13 +37,13 @@
 <!-- Code Syntax Highlighting -->
 <link
   rel="stylesheet"
-  href="https://combinatronics.io/syncdoth/jekyll-pygments-themes/master/{{ site.highlight_theme_light | append: '.css' }}"
-  media="none"
+  href="https://cdn.jsdelivr.net/gh/syncdoth/jekyll-pygments-themes@master/{{ site.highlight_theme_light | append: '.css' }}"
+  media=""
   id="highlight_theme_light"
 />
 
 <!-- Styles -->
-{% if site.icon.size < 3 %}
+{% if site.icon.size < 4 %}
 <link
   rel="shortcut icon"
   href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>{{ site.icon }}</text></svg>"
@@ -64,7 +64,7 @@
 {% if site.enable_darkmode %}
 <link
   rel="stylesheet"
-  href="https://combinatronics.io/syncdoth/jekyll-pygments-themes/master/{{ site.highlight_theme_dark | append: '.css' }}"
+  href="https://cdn.jsdelivr.net/gh/syncdoth/jekyll-pygments-themes@master/{{ site.highlight_theme_dark | append: '.css' }}"
   media="none"
   id="highlight_theme_dark"
 />

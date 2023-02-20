@@ -21,9 +21,12 @@ layout: default
       class="profile float-{%- if page.profile.align == 'left' -%}left{%- else -%}right{%- endif -%}"
     >
       {%- if page.profile.image %} {%- assign profile_image_path =
-      page.profile.image | prepend: 'assets/img/' -%} {% include figure.html
-      path=profile_image_path class="img-fluid z-dept-1 rounded"
-      alt=page.profile.image -%} {% endif -%} {%- if page.profile.address %}
+      page.profile.image | prepend: 'assets/img/' -%} {% if
+      page.profile.image_circular %} {%- assign profile_image_class = "img-fluid
+      z-depth-1 rounded-circle" -%} {% else %} {%- assign profile_image_class =
+      "img-fluid z-depth-1 rounded" -%} {% endif %} {% include figure.html
+      path=profile_image_path class=profile_image_class alt=page.profile.image
+      -%} {% endif -%} {%- if page.profile.address %}
       <div class="address">{{ page.profile.address }}</div>
       {%- endif %}
     </div>
@@ -31,14 +34,33 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    {% if page.news -%}
     <!-- News -->
-    {%- include news.html %} {%- endif %} {% if page.education -%}
+    {% if page.news -%}
+    <h2>
+      <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+    </h2>
+    {%- include news.html %} {%- endif %}
+
     <!-- education -->
-    {%- include education.html %} {%- endif %} {% if page.selected_papers -%}
+    {% if page.education -%}
+    <h2>
+      <a href="{{ '/Education/' | relative_url }}" style="color: inherit"
+        >Education</a
+      >
+    </h2>
+    {%- include education.html %} {%- endif %}
+
     <!-- Selected papers -->
-    {%- include selected_papers.html %} {%- endif %} {%- if page.social %}
+    {% if page.selected_papers -%}
+    <h2>
+      <a href="{{ '/publications/' | relative_url }}" style="color: inherit"
+        >selected publications</a
+      >
+    </h2>
+    {%- include selected_papers.html %} {%- endif %}
+
     <!-- Social -->
+    {%- if page.social %}
     <div class="social">
       <div class="contact-icons">{% include social.html %}</div>
 
