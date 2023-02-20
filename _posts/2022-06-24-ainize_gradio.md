@@ -3,8 +3,9 @@ layout: post
 title: "AINize + Gradio: Easiest Automatic ML model deployment"
 date: 2022-06-24 00:12:00
 description: Serving a simple demo page (along with REST API) for you ML model on the web.
-comments: true
-categories: machine-learning deployment docker
+giscus_comments: true
+tags: machine-learning deployment docker
+categories: Tutorial
 ---
 
 Machine Learning is great. You can train models to do a lot of fancy things, like

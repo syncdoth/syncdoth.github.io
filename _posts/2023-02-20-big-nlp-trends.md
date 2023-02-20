@@ -1,10 +1,11 @@
 ---
 layout: post
 title: "Big NLP Trends from 2016 to 2022"
-date: 2023-02-21 09:00:00
+date: 2023-02-20 19:40:00 +0800
 description: Recent trends in NLP from Attention to ChatGPT
-comments: true
-categories: NLP LM AI ML DeepLearning Trends
+giscus_comments: true
+tags: NLP LM AI ML Deep-learning
+categories: Review
 ---
 
 ## Disclaimer

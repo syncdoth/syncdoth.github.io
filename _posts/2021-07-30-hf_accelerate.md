@@ -3,8 +3,9 @@ layout: post
 title: Introducing easy HW acceleration for PyTorch
 date: 2021-07-30 00:16:00
 description: Multi-GPU / TPU setting with PyTorch made easy with huggingface accelerate.
-comments: true
-categories: machine-learning
+giscus_comments: true
+tags: machine-learning
+categories: Tutorial
 ---
 
 ## Multi-GPU with PyTorch
