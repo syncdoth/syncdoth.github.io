@@ -105,6 +105,7 @@ famous LLMs are:
 - OPT (facebook, 175B)
 - PALM (GOogle, 540B)
 - GPT-NeoX / GPT-J (EleutherAI)
+- Bloom (Bigscience)
 
 #### Prompt Engineering
 
@@ -122,6 +123,8 @@ All tasks represented in text and solved with single transformer encoder-decoder
 architecture.
 
 - I think this laid the foundation for instruction tuning later.
+- There is a similar model called T0 from Bigscience, which is pretrained to allow
+  zero-shot inference on many NLP tasks using the same architecture as T5.
 
 ### 2021
 
@@ -167,6 +170,7 @@ Notable models are:
 - OPT-IML (Facebook)
 - FLAN, Flan-T5 (Google)
 - InstructGPT (GPT 3.5 family), ChatGPT (OpenAI)
+- T0 (Bigscience, kind of)
 
 ### ChatGPT
 
