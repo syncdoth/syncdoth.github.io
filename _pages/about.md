@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p><i>(Photo: HKUST, Hong Kong)</i></p>
+    <p><i>(Photo: HKUST)</i></p>
     <p>Yongin-si, South Korea</p>
 
 education: true  # includes a list of education history
@@ -21,20 +21,40 @@ social: true  # includes social icons at the bottom of the page
 
 I have a huge interest in **Machine Learning (ML)** and **Artificial Intelligence (AI)**,
 and planning to pursue a higher degree after my bachelor's degree. My major
-interest lies in the field of **Natural Language Processing (NLP)**. I am also interested
-in AI safety or **trustworthy AI** direction, including **eXplainable AI (XAI)**,
-**privacy**, **fairness**, and **robustness**.
+interest lies in the field of **Natural Language Processing (NLP)**. Other orthogonal fields
+of interest include **Trustworthy AI**, such as **eXplainable AI (XAI)** and **robustness**.
 
-My major research questions are:
+---
 
-1. Inference time optimization
-2. constraint modeling
-3. Knowledge Grounding
-4. compositional generalization
+**Research Questions:**
 
-This website is dedicated to the purpose of showcasing my experiences in
-coursework, industries, and research without the confinement of CV format.
+1. Inference-time optimization
+2. Knowledge Grounding
+3. compositional generalization
 
-You can also take a look at my [Resume](assets/pdf/resume.pdf).
+**In more details:**
 
+First topic is something I call **"inference-time optimization"**.
+Language Models have come a long way, and they are extremely strong nowadays. However,
+their behaviors are strongly dependent on the training dataset's property. It is
+impossible to design dataset that is "perfect", so they will always exhibit undesired
+attributes. I believe this should be addressed with inference-time adaptation method
+which includes controllable generation or constrained modeling for given constraints /
+desiderata (objectives).
+
+Second, I am also interested in **"Knowledge Grounding"**.
+Hallucination, or *confabulation* (credit to Dr. Hinton), has become the hot potato
+in the era of generative AI. I believe reference-grounded generation is an important
+direction of solving this problem in the **safe AI** direction.
+
+Third topic is reasoning ability, or more precisely, **"Compositional generalization"**.
+Dr. Chomsky states that human language has *"infinite uses of finite means"*, which
+suggests that humans compose finite set of functions to create infinite different
+possibilities. There are evidences that current SOTA AI (arguably LLMs) still may lack
+such ability.
+
+---
+#### [📄 Resume](assets/pdf/resume.pdf) ←
 *(Last Update: July 11, 2023)*
+
+---
