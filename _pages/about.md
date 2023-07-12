@@ -36,10 +36,11 @@ My major research questions are:
 1. Inference time optimization
 2. constraint modeling
 3. Knowledge Grounding
+4. compositional generalization
 
 This website is dedicated to the purpose of showcasing my experiences in
 coursework, industries, and research without the confinement of CV format.
 
-You can also take a look at my [CV](assets/pdf/CV.pdf).
+You can also take a look at my [Resume](assets/pdf/resume.pdf).
 
-*(Last Update: March 5, 2022)*
+*(Last Update: July 11, 2023)*
