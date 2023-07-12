@@ -10,7 +10,7 @@ published: false
 ---
 
 <div class="projects">
-{%- if page.published %}
+{%- if site.projects.output %}
 {%- if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {%- for category in page.display_categories %}
