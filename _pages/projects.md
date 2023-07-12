@@ -6,15 +6,11 @@ description: Currently under heavy reconstruction!
 nav: true
 display_categories: [academic, fun]
 horizontal: false
+published: false
 ---
 
-<!-- pages/projects.md -->
-
-In the meantime, I will leave the code here for reference later:
-
-```html
-{% raw %}
 <div class="projects">
+{%- if page.published %}
 {%- if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {%- for category in page.display_categories %}
@@ -59,6 +55,5 @@ In the meantime, I will leave the code here for reference later:
   </div>
   {%- endif -%}
 {%- endif -%}
+{%- endif -%}
 </div>
-{% endraw %}
-```
