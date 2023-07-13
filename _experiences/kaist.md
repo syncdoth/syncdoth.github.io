@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2021-08-31
+date: 2021-07-01
 start_date: 2021-07-01
 end_date: 2021-08-31
 inline: true
