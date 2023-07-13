@@ -2,15 +2,14 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Currently under heavy reconstruction!
+description: WIP Projects that are currently unpublished / unlikely to be published.
 nav: true
 display_categories: [academic, fun]
 horizontal: false
-published: false
 ---
 
 <div class="projects">
-{%- if site.projects.output %}
+{%- if site.project_published %}
 {%- if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->
   {%- for category in page.display_categories %}
