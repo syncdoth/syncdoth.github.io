@@ -176,7 +176,16 @@ collections:
       layout: post
     output: true
     permalink: /news/:path/
+  experiences:
+    defaults:
+      layout: post
+    output: true
+    permalink: /experiences/:path/
 
+experience_cfg:
+  enabled: true
+  scrollable: false # adds a vertical scroll bar if there are more than 3 new posts items
+  limit: # leave blank to include all
 announcements:
   enabled: true
   scrollable: false # adds a vertical scroll bar if there are more than 3 news items

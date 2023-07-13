@@ -52,9 +52,15 @@ layout: default
             {%- include selected_papers.html %}
           {%- endif %}
 
+          <!-- experiences -->
+          {% if page.experiences and site.experience_cfg.enabled -%}
+            <h2><a href="{{ '/experiences/' | relative_url }}" style="color: inherit;">experiences</a></h2>
+            {%- include experiences.html %}
+          {%- endif %}
+
           <!-- education -->
           {% if page.education -%}
-            <h2><a href="{{ '/Education/' | relative_url }}" style="color: inherit">Education</a></h2>
+            <h2><a href="{{ '/Education/' | relative_url }}" style="color: inherit">education</a></h2>
             {%- include education.html %}
           {%- endif %}
 
