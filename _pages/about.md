@@ -22,16 +22,19 @@ social: true  # includes social icons at the bottom of the page
 
 I have a huge interest in **Machine Learning (ML)** and **Artificial Intelligence (AI)**,
 and planning to pursue a higher degree after my bachelor's degree. My major
-interest lies in the field of **Natural Language Processing (NLP)**. Other orthogonal fields
-of interest include **Trustworthy AI**, such as **eXplainable AI (XAI)** and **robustness**.
+interest lies in the field of **Natural Language Processing (NLP)**, working with
+Language Models (LMs). Other orthogonal fields of interest include **Trustworthy AI**,
+ such as **eXplainable AI (XAI)** and **robustness**.
 
 ---
 
 **Research Questions:**
 
+*Language Model +*
 1. Inference-time optimization
 2. Knowledge Grounding
 3. compositional generalization
+4. World Model
 
 **In more details:**
 
@@ -53,6 +56,10 @@ Dr. Chomsky states that human language has *"infinite uses of finite means"*, wh
 suggests that humans compose finite set of functions to create infinite different
 possibilities. There are evidences that current SOTA AI (arguably LLMs) still may lack
 such ability.
+
+The final topic is **"World Model"**, which is related to understanding commonsense about
+how the world works. I have a few publications about commonsense reasoning and building
+commonsense knowledge bases (CSKBs).
 
 ---
 #### [📄 Resume](assets/pdf/resume.pdf) ←
