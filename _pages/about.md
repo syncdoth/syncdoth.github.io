@@ -14,7 +14,7 @@ profile:
 
 education: true  # includes a list of education history
 news: true  # includes a list of news
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 experiences: true
 latest_posts: false  # includes a list of the newest posts
 social: true  # includes social icons at the bottom of the page
@@ -63,6 +63,6 @@ commonsense knowledge bases (CSKBs).
 
 ---
 #### [📄 Resume](assets/pdf/resume.pdf) ←
-*(Last Update: July 11, 2023)*
+*(Last Update: Oct 9, 2023)*
 
 ---
