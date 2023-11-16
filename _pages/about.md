@@ -63,6 +63,6 @@ commonsense knowledge bases (CSKBs).
 
 ---
 #### [📄 Resume](assets/pdf/resume.pdf) ←
-*(Last Update: Oct 9, 2023)*
+*(Last Update: Nov 16, 2023)*
 
 ---
