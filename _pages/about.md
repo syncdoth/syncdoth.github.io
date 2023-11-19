@@ -66,3 +66,9 @@ commonsense knowledge bases (CSKBs).
 *(Last Update: Nov 16, 2023)*
 
 ---
+
+#### My another Passion: Photography
+
+During my free time, I love doing street photography. You can check out my photos
+on my Instagram [@sync.hpoto](https://www.instagram.com/sync.hpoto/) (More Anything) & [@sync.hcut](https://www.instagram.com/sync.hcut/) (More Street).
+I'm also big into analog film photography; which is exclusively showcased in my personal [gallery](https://synch-darkroom.onrender.com).
