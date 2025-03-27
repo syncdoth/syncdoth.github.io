@@ -23,20 +23,31 @@
          selected={true}
     }
 
-
-@article{choi2023kcts,
+@inproceedings{choi-etal-2023-kcts,
     bibtex_show={true},
-    title={KCTS: Knowledge-Constrained Tree Search Decoding with Token-Level Hallucination Detection},
-    author={Sehyun Choi and Tianqing Fang and Zhaowei Wang and Yangqiu Song},
-    year={2023},
-    month={Oct},
+    title = "{KCTS}: Knowledge-Constrained Tree Search Decoding with Token-Level Hallucination Detection",
+    author = "Choi, Sehyun  and
+      Fang, Tianqing  and
+      Wang, Zhaowei  and
+      Song, Yangqiu",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
     abbr={EMNLP 2023},
     journal={EMNLP 2023},
     code={https://github.com/HKUST-KnowComp/Knowledge-Constrained-Decoding},
     selected={true},
-    arxiv={2310.09044},
     poster={kcts_poster.pdf},
     slides={kcts_slides.pdf}
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.867/",
+    doi = "10.18653/v1/2023.emnlp-main.867",
+    pages = "14035--14053",
+    abstract = "Large Language Models (LLMs) have demonstrated remarkable human-level natural language generation capabilities. However, their potential to generate misinformation, often called the *hallucination* problem, poses a significant risk to their deployment. A common approach to address this issue is to retrieve relevant knowledge and fine-tune the LLM with the knowledge in its input. Unfortunately, this method incurs high training costs and may cause catastrophic forgetting for multi-tasking models. To overcome these limitations, we propose a knowledge-constrained decoding method called KCTS (Knowledge-Constrained Tree Search), which guides a frozen LM to generate text aligned with the reference knowledge at each decoding step using a knowledge classifier score and MCTS (Monte-Carlo Tree Search). To adapt the sequence-level knowledge classifier to token-level guidance, we also propose a novel token-level hallucination detection method called RIPA (Reward Inflection Point Approximation). Our empirical results on knowledge-grounded dialogue and abstractive summarization demonstrate the strength of KCTS as a plug-and-play, model-agnostic decoding method that can effectively reduce hallucinations in natural language generation."
 }
 
 @article{fang2023ckbp,
@@ -102,6 +113,9 @@
     abstract = "Abstraction ability is crucial in human intelligence, which can also benefit various tasks in NLP study. Existing work shows that LLMs are deficient in abstract ability, and how to improve it remains unexplored. In this work, we design the framework AbsInstruct to enhance LLMs' abstraction ability through instruction tuning. The framework builds instructions with in-depth explanations to assist LLMs in capturing the underlying rationale of abstraction. Meanwhile, we introduce a plausibility estimator to select instructions that are more consistent with the abstraction knowledge of LLMs to be aligned. Then, our framework combines abstraction instructions with general-purpose ones to build a hybrid dataset. Extensive experiments and analyses demonstrate that our framework can considerably enhance LLMs' abstraction ability with strong generalization performance while maintaining their general instruction-following abilities."
 }
 @misc{choi2024crossarchitecture,
+    bibtex_show={true},
+    journal={arXiv preprint},
+    abbr={arXiv},
     title={Cross-Architecture Transfer Learning for Linear-Cost Inference Transformers},
     author={Sehyun Choi},
     year={2024},
