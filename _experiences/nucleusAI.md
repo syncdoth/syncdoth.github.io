@@ -2,6 +2,7 @@
 layout: post
 date: 2023-09-30
 start_date: 2023-09-30
+end_date: 2024-07-29
 inline: true
 ---
 

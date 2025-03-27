@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Master of Philosophy (MPhil) @ <a href="https://hkust.edu.hk/home">HKUST</a>.
+subtitle: ML Research Scientist @ <a href="https://twelvelabs.io">TwelveLabs</a>.
 
 profile:
   align: right
@@ -21,10 +21,10 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 I have a huge interest in **Machine Learning (ML)** and **Artificial Intelligence (AI)**,
-and planning to pursue a higher degree after my bachelor's degree. My major
-interest lies in the field of **Natural Language Processing (NLP)**, working with
-Language Models (LMs). Other orthogonal fields of interest include **Trustworthy AI**,
- such as **eXplainable AI (XAI)** and **robustness**.
+and especially **Natural Language Processing (NLP)** and **Multi-Modal AI**, working
+with Language Models (LMs). Other orthogonal fields of interest include **Trustworthy AI**,
+ such as **eXplainable AI (XAI)** and **robustness**. I am also interested in more
+ engineering focused works, such as large-scale LLM pretraining engineering.
 
 ---
 
