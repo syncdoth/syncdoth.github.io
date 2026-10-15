@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHeading from '../../components/PageHeading.astro';
+
+const projects = await getCollection('projects', ({ data }) => !data.draft);
+const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<BaseLayout title="Projects" description="Selected research and side projects by Sehyun Choi.">
+  <PageHeading eyebrow="Selected work" title="Projects" description="Research prototypes and small tools, with notes on what each project does and how to explore it further." />
+  <section class="project-grid" aria-label="Projects">
+    {sortedProjects.map((project) => (
+      <article class="project-card">
+        <a href={`/projects/${project.data.slug}/`}>
+          <img class="project-image" src={project.data.image} alt="" loading="lazy" />
+          <div class="project-card-content">
+            <div class="project-meta"><span>{project.data.category}</span><span>·</span><span>Project notes</span></div>
+            <h2>{project.data.title}</h2>
+            <p>{project.data.summary}</p>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+</BaseLayout>

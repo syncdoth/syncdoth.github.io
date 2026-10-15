@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PageHeading from '../../../components/PageHeading.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  const years = [...new Set(posts.map((post) => post.data.pubDate.getFullYear()))];
+  return years.map((year) => ({ params: { year: String(year) } }));
+}
+
+const { year } = Astro.params;
+const posts = (await getCollection('blog'))
+  .filter((post) => post.data.pubDate.getFullYear() === Number(year))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={`Writing · ${year}`} description={`Writing published in ${year} by Sehyun Choi.`}>
+  <PageHeading eyebrow="Writing archive" title={String(year)} description="Posts from this year." />
+  <section class="writing-list" aria-label={`Posts from ${year}`}>
+    {posts.map((post) => (
+      <article class="writing-card">
+        <a href={`/blog/${year}/${post.id}/`}>
+          <div class="writing-card-content">
+            <div class="writing-meta"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })}</time></div>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+            <div class="tag-list">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>
+          </div>
+        </a>
+      </article>
+    ))}
+  </section>
+  <a class="article-back" href="/blog/">← All writing</a>
+</BaseLayout>

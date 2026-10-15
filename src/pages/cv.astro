@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { publications } from '../data/publications';
+import { education, experiences } from '../data/timeline';
+import { profile } from '../data/site';
+---
+
+<BaseLayout title="Résumé" description="A concise academic and professional résumé for Sehyun Choi.">
+  <PageHeading eyebrow="Curriculum vitae" title="Résumé" description="A concise overview of my education, research, and professional experience." />
+  <p class="button-row"><a class="button" href={profile.resume}>Download résumé PDF <span aria-hidden="true">↓</span></a></p>
+
+  <section class="section">
+    <div class="section-heading"><div><p class="section-kicker">01</p><h2>Experience</h2></div></div>
+    <ol class="timeline-list">
+      {experiences.map((item) => (
+        <li class="timeline-item"><time class="timeline-date">{item.dates}</time><div class="timeline-content"><h3>{item.role} · {item.organization}</h3><p>{item.location}{item.details ? ` · ${item.details}` : ''}</p></div></li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><div><p class="section-kicker">02</p><h2>Education</h2></div></div>
+    <ol class="timeline-list">
+      {education.map((item) => (
+        <li class="timeline-item"><time class="timeline-date">{item.dates}</time><div class="timeline-content"><h3>{item.degree}</h3><p>{item.institution}</p>{item.detail && <p class="timeline-detail">{item.detail}</p>}</div></li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="section">
+    <div class="section-heading"><div><p class="section-kicker">03</p><h2>Selected publications</h2></div><a class="text-link" href="/publications/">Full list →</a></div>
+    <ol class="cv-publication-list">
+      {publications.filter((paper) => paper.selected).map((paper) => <li><strong>{paper.title}</strong><span>{paper.venue} · {paper.year}</span></li>)}
+    </ol>
+  </section>
+</BaseLayout>

@@ -1,0 +1,14 @@
+---
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+
+const coursework = await getEntry('pages', 'courseworks');
+if (!coursework) throw new Error('Missing src/content/pages/courseworks.md');
+const { Content } = await render(coursework);
+---
+
+<BaseLayout title="Coursework" description={coursework.data.description}>
+  <PageHeading eyebrow="Education archive" title={coursework.data.title} description={coursework.data.description} />
+  <article class="coursework-content prose"><Content /></article>
+</BaseLayout>

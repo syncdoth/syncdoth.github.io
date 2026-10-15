@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { experiences } from '../data/timeline';
+---
+
+<BaseLayout title="Experience" description="Research and engineering experience for Sehyun Choi.">
+  <PageHeading eyebrow="Work history" title="Experience" description="Research and engineering roles across language models, commonsense reasoning, and multimodal AI." />
+  <section aria-label="Experience timeline">
+    <ol class="timeline-list">
+      {experiences.map((item) => (
+        <li class="timeline-item">
+          <time class="timeline-date">{item.dates}</time>
+          <div class="timeline-content">
+            <h2><a href={item.organizationUrl} target="_blank" rel="noreferrer">{item.organization} ↗</a></h2>
+            <p>{item.role} · {item.location}</p>
+            {item.details && <p class="timeline-detail">{item.details}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+</BaseLayout>
