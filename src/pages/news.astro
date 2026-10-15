@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeading from '../components/PageHeading.astro';
+import { news } from '../data/timeline';
+---
+
+<BaseLayout title="News" description="Research and career updates from Sehyun Choi.">
+  <PageHeading eyebrow="Updates" title="News" description="Research milestones, papers, and career updates." />
+  <section aria-label="News timeline">
+    <ul class="news-list">
+      {news.map((item) => (
+        <li>
+          <time class="news-date">{item.date}</time>
+          <p class="news-copy">{item.text} {item.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
