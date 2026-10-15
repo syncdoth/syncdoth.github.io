@@ -13,7 +13,13 @@ const blog = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: '**/*.md', base: './src/content/projects' }),
+  loader: glob({
+    pattern: '**/*.md',
+    base: './src/content/projects',
+    // Keep directory names in IDs so entries under archive/ can be filtered,
+    // even when their frontmatter defines a published URL slug.
+    generateId: ({ entry }) => entry.replace(/\.md$/, ''),
+  }),
   schema: z.object({
     slug: z.string(),
     title: z.string(),

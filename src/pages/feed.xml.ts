@@ -1,11 +1,11 @@
-import { getCollection } from 'astro:content';
+import { getPublicBlogPosts } from '../lib/content';
 
 const siteUrl = 'https://syncdoth.github.io';
 const escapeXml = (value: string) =>
   value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&apos;');
 
 export async function GET() {
-  const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+  const posts = (await getPublicBlogPosts()).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
   const items = posts.map((post) => {
     const url = `${siteUrl}/blog/${post.data.pubDate.getFullYear()}/${post.id}/`;
     return `
