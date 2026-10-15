@@ -32,6 +32,14 @@ export const publications: Publication[] = [
     abstract: 'AbsPyramid is a unified entailment graph of 221K textual descriptions of abstraction knowledge, designed to evaluate language models’ abstraction ability across diverse events.',
   },
   {
+    title: 'Parameter-Efficient Checkpoint Merging via Metrics-Weighted Averaging',
+    authors: ['Shi Jie Yu, Sehyun Choi'],
+    year: 2025,
+    venue: 'arXiv preprint',
+    selected: true,
+    links: [{ label: 'arXiv', href: 'https://arxiv.org/abs/2504.18580' }],
+  },
+  {
     title: 'Cross-Architecture Transfer Learning for Linear-Cost Inference Transformers',
     authors: ['Sehyun Choi'],
     year: 2024,

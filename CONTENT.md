@@ -27,6 +27,8 @@ Write the post here in Markdown.
 
 The post appears automatically in `/blog/` and gets a dated URL such as `/blog/2026/grounded-generation/`. Standard Markdown, tables, fenced code blocks, and LaTeX math are supported.
 
+To archive a post without publishing it, move it to `src/content/blog/archive/`. Files inside any `archive/` folder are excluded from the homepage, blog listings, year pages, RSS feed, and generated post routes.
+
 ## Projects
 
 Add one Markdown file per project in `src/content/projects/`:
@@ -44,7 +46,7 @@ category: "research"
 Describe the project here in Markdown.
 ```
 
-Add the image under `public/assets/`. For unpublished write-ups, place the file in `src/content/projects/archive/` and add `draft: true` to the frontmatter. Draft projects remain in the repo as editable Markdown and do not appear on the site. Keep an existing `slug` when editing a published project so its URL stays the same.
+Add the image under `public/assets/`. To archive a project, move it to `src/content/projects/archive/`. Files inside any `archive/` folder and projects marked `draft: true` remain editable in the repo but do not appear on the site. Keep an existing `slug` when editing a published project so its URL stays the same.
 
 ## Research and coursework pages
 

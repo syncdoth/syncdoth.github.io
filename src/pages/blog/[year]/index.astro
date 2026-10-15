@@ -1,16 +1,16 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PageHeading from '../../../components/PageHeading.astro';
+import { getPublicBlogPosts } from '../../../lib/content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog');
+  const posts = await getPublicBlogPosts();
   const years = [...new Set(posts.map((post) => post.data.pubDate.getFullYear()))];
   return years.map((year) => ({ params: { year: String(year) } }));
 }
 
 const { year } = Astro.params;
-const posts = (await getCollection('blog'))
+const posts = (await getPublicBlogPosts())
   .filter((post) => post.data.pubDate.getFullYear() === Number(year))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---

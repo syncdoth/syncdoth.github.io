@@ -1,12 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PublicationList from '../components/PublicationList.astro';
+import { getPublicBlogPosts } from '../lib/content';
 import { publications } from '../data/publications';
 import { education, experiences, news } from '../data/timeline';
 import { profile, researchAreas, socialLinks } from '../data/site';
 
-const recentPosts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const recentPosts = (await getPublicBlogPosts()).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
 const selectedPapers = publications.filter((publication) => publication.selected);
 const recentExperience = experiences.slice(0, 3);
 const recentNews = news.slice(0, 4);

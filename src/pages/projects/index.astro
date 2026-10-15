@@ -1,9 +1,9 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeading from '../../components/PageHeading.astro';
+import { getPublicProjects } from '../../lib/content';
 
-const projects = await getCollection('projects', ({ data }) => !data.draft);
+const projects = await getPublicProjects();
 const sortedProjects = projects.sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
