@@ -11,4 +11,4 @@ category: "research"
 
 I evaluated a small RWKV-4 Neo model on longer-digit arithmetic to examine its compositional generalization. The experiment found that the model did not reliably generalize to longer numbers.
 
-The evaluation code is available in the [RWKV-4 math evaluation gist](https://gist.github.com/syncdoth/8ae5e0444bb34adc16671c6d08b6a4fd). For context and results, see the [compositional generalization article](/blog/compositional-generalization/).
+The evaluation code is available in the [RWKV-4 math evaluation gist](https://gist.github.com/syncdoth/8ae5e0444bb34adc16671c6d08b6a4fd). For context and results, see the [compositional generalization article](/blog/2023/compositional-generalization/).
