@@ -4,10 +4,20 @@ import PublicationList from '../components/PublicationList.astro';
 import { getPublicBlogPosts } from '../lib/content';
 import { publications } from '../data/publications';
 import { education, experiences, news } from '../data/timeline';
-import { externalWriting, profile, researchAreas, socialLinks } from '../data/site';
-import ExternalWritingCard from '../components/ExternalWritingCard.astro';
+import { externalWritings, profile, researchAreas, socialLinks } from '../data/site';
+import WritingCard from '../components/WritingCard.astro';
 
-const recentPosts = (await getPublicBlogPosts()).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()).slice(0, 3);
+const writingItems = [
+  ...externalWritings.map((item) => ({ ...item, external: true })),
+  ...(await getPublicBlogPosts()).map((post) => ({
+    title: post.data.title,
+    description: post.data.description,
+    pubDate: post.data.pubDate,
+    href: `/blog/${post.data.pubDate.getFullYear()}/${post.id}/`,
+    tags: post.data.tags.slice(0, 3),
+    external: false,
+  })),
+].sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf()).slice(0, 4);
 const selectedPapers = publications.filter((publication) => publication.selected);
 const recentExperience = experiences.slice(0, 3);
 const recentNews = news.slice(0, 4);
@@ -130,19 +140,7 @@ const recentNews = news.slice(0, 4);
         <a class="text-link" href="/blog/">All writing <span aria-hidden="true">→</span></a>
       </div>
       <div class="writing-list">
-        <ExternalWritingCard item={externalWriting} />
-        {recentPosts.map((post) => (
-          <article class="writing-card">
-            <a href={`/blog/${post.data.pubDate.getFullYear()}/${post.id}/`}>
-              <div class="writing-card-content">
-                <div class="writing-meta"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })}</time></div>
-                <h2>{post.data.title}</h2>
-                <p>{post.data.description}</p>
-                <div class="tag-list">{post.data.tags.slice(0, 3).map((tag) => <span>{tag}</span>)}</div>
-              </div>
-            </a>
-          </article>
-        ))}
+        {writingItems.map((item) => <WritingCard item={item} />)}
       </div>
     </section>
 

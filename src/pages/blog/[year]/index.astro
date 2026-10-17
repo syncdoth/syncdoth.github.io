@@ -1,35 +1,42 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import PageHeading from '../../../components/PageHeading.astro';
+import WritingCard from '../../../components/WritingCard.astro';
 import { getPublicBlogPosts } from '../../../lib/content';
+import { externalWritings } from '../../../data/site';
 
 export async function getStaticPaths() {
   const posts = await getPublicBlogPosts();
-  const years = [...new Set(posts.map((post) => post.data.pubDate.getFullYear()))];
+  const years = [...new Set([
+    ...posts.map((post) => post.data.pubDate.getFullYear()),
+    ...externalWritings.map((item) => item.pubDate.getFullYear()),
+  ])];
   return years.map((year) => ({ params: { year: String(year) } }));
 }
 
 const { year } = Astro.params;
-const posts = (await getPublicBlogPosts())
-  .filter((post) => post.data.pubDate.getFullYear() === Number(year))
-  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const yearNumber = Number(year);
+const writingItems = [
+  ...externalWritings
+    .filter((item) => item.pubDate.getFullYear() === yearNumber)
+    .map((item) => ({ ...item, external: true })),
+  ...(await getPublicBlogPosts())
+    .filter((post) => post.data.pubDate.getFullYear() === yearNumber)
+    .map((post) => ({
+      title: post.data.title,
+      description: post.data.description,
+      pubDate: post.data.pubDate,
+      href: `/blog/${year}/${post.id}/`,
+      tags: post.data.tags,
+      external: false,
+    })),
+].sort((a, b) => b.pubDate.valueOf() - a.pubDate.valueOf());
 ---
 
 <BaseLayout title={`Writing · ${year}`} description={`Writing published in ${year} by Sehyun Choi.`}>
   <PageHeading eyebrow="Writing archive" title={String(year)} description="Posts from this year." />
-  <section class="writing-list" aria-label={`Posts from ${year}`}>
-    {posts.map((post) => (
-      <article class="writing-card">
-        <a href={`/blog/${year}/${post.id}/`}>
-          <div class="writing-card-content">
-            <div class="writing-meta"><time datetime={post.data.pubDate.toISOString()}>{post.data.pubDate.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })}</time></div>
-            <h2>{post.data.title}</h2>
-            <p>{post.data.description}</p>
-            <div class="tag-list">{post.data.tags.map((tag) => <span>{tag}</span>)}</div>
-          </div>
-        </a>
-      </article>
-    ))}
+  <section class="writing-list" aria-label={`Writing from ${year}`}>
+    {writingItems.map((item) => <WritingCard item={item} />)}
   </section>
   <a class="article-back" href="/blog/">← All writing</a>
 </BaseLayout>

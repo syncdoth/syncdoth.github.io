@@ -52,13 +52,32 @@ export const researchAreas = [
   },
 ];
 
-export const externalWriting = {
-  title: 'Cutting Edge Isn’t Plug-and-Play: Customizing FlashAttention-4 on B300',
-  description: 'How I customized FlashAttention-4 for B300 and brought it to video language model training.',
-  pubDate: new Date('2026-05-29T00:00:00.000Z'),
-  href: 'https://www.twelvelabs.io/ko/blog/cutting-edge-isn%E2%80%99t-plug-and-play',
-  tags: ['TwelveLabs', 'FlashAttention-4', 'Training'],
-};
+export const externalWritings = [
+  {
+    title: 'Cutting Edge Isn’t Plug-and-Play: Customizing FlashAttention-4 on B300',
+    description: 'How I customized FlashAttention-4 for B300 and brought it to video language model training.',
+    pubDate: new Date('2026-05-29T00:00:00.000Z'),
+    href: 'https://www.twelvelabs.io/ko/blog/cutting-edge-isn%E2%80%99t-plug-and-play',
+    source: 'TwelveLabs blog',
+    tags: ['TwelveLabs', 'FlashAttention-4', 'Training'],
+  },
+  {
+    title: 'The Rise of RNN? Review of “Retentive Network: A Successor to Transformer for Large Language Models”',
+    description: 'A review of RetNet’s parallel, recurrent, and chunkwise retention, and its promise of parallel training with constant-time inference.',
+    pubDate: new Date('2023-07-21T00:00:00.000Z'),
+    href: 'https://medium.com/@choisehyun98/the-rise-of-rnn-review-of-retentive-network-a080a9a1ad1d',
+    source: 'Medium',
+    tags: ['NLP', 'RetNet', 'Language models'],
+  },
+  {
+    title: 'GZIP + KNN > BERT for Text Classification??',
+    description: 'A look at compressor-based text classification with GZIP, normalized compression distance, and k-nearest neighbors.',
+    pubDate: new Date('2023-07-14T00:00:00.000Z'),
+    href: 'https://medium.com/@choisehyun98/review-of-the-acl2023-gzip-paper-low-resource-text-classification-a-parameter-free-e7c1cf506ada',
+    source: 'Medium',
+    tags: ['NLP', 'Text classification', 'Machine learning'],
+  },
+];
 
 export const navigation = [
   { label: 'About', href: '/' },
