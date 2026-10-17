@@ -3,11 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHeading from '../components/PageHeading.astro';
 import PublicationList from '../components/PublicationList.astro';
 import { publications } from '../data/publications';
+
+const recentFirstPublications = [...publications].sort((a, b) => b.year - a.year);
 ---
 
 <BaseLayout title="Publications" description="Research papers and publications by Sehyun Choi.">
   <PageHeading eyebrow="Research" title="Publications" description="Selected work on knowledge grounding, abstraction, commonsense reasoning, and language models." />
   <section aria-label="Publication list">
-    <PublicationList items={publications} />
+    <PublicationList items={recentFirstPublications} />
   </section>
 </BaseLayout>
