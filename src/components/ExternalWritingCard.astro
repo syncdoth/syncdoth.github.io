@@ -1,0 +1,27 @@
+---
+interface Props {
+  item: {
+    title: string;
+    description: string;
+    pubDate: Date;
+    href: string;
+    tags: string[];
+  };
+}
+
+const { item } = Astro.props;
+---
+
+<article class="writing-card">
+  <a href={item.href} target="_blank" rel="noreferrer">
+    <div class="writing-card-content">
+      <div class="writing-meta">
+        <time datetime={item.pubDate.toISOString()}>{item.pubDate.toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+        <span>TwelveLabs blog</span>
+      </div>
+      <h2>{item.title}</h2>
+      <p>{item.description}</p>
+      <div class="tag-list">{item.tags.map((tag) => <span>{tag}</span>)}</div>
+    </div>
+  </a>
+</article>

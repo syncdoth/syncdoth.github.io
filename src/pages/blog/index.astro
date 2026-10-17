@@ -1,7 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHeading from '../../components/PageHeading.astro';
+import ExternalWritingCard from '../../components/ExternalWritingCard.astro';
 import { getPublicBlogPosts } from '../../lib/content';
+import { externalWriting } from '../../data/site';
 
 const posts = (await getPublicBlogPosts()).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const years = [...new Set(posts.map((post) => post.data.pubDate.getFullYear()))];
@@ -15,6 +17,7 @@ const years = [...new Set(posts.map((post) => post.data.pubDate.getFullYear()))]
     <a class="text-link rss-link" href="/feed.xml">RSS ↗</a>
   </div>
   <section class="writing-list" aria-label="Blog posts">
+    <ExternalWritingCard item={externalWriting} />
     {posts.map((post) => (
       <article class="writing-card">
         <a href={`/blog/${post.data.pubDate.getFullYear()}/${post.id}/`}>

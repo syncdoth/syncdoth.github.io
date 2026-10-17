@@ -29,18 +29,36 @@ export const researchAreas = [
     number: '01',
     title: 'Video Language Models',
     description: 'Building Pegasus - a foundational video language model.',
+    links: [
+      { label: 'Pegasus 1.5 release', href: 'https://www.twelvelabs.io/blog/introducing-pegasus-1-5' },
+    ],
   },
   {
     number: '02',
     title: 'Knowledge grounding',
     description: 'Connecting generated answers to evidence and reducing unsupported claims.',
+    links: [
+      { label: 'KCTS paper', href: 'https://aclanthology.org/2023.emnlp-main.867/' },
+    ],
   },
   {
     number: '03',
     title: 'Training Efficiency',
     description: 'From efficient transfer learning across architecture to distributed GPU training optimization.',
+    links: [
+      { label: 'Cross-Architecture Transfer Learning paper', href: 'https://arxiv.org/abs/2404.02684' },
+      { label: 'FlashAttention-4 blog', href: 'https://www.twelvelabs.io/ko/blog/cutting-edge-isn%E2%80%99t-plug-and-play' },
+    ],
   },
 ];
+
+export const externalWriting = {
+  title: 'Cutting Edge Isn’t Plug-and-Play: Customizing FlashAttention-4 on B300',
+  description: 'How I customized FlashAttention-4 for B300 and brought it to video language model training.',
+  pubDate: new Date('2026-05-29T00:00:00.000Z'),
+  href: 'https://www.twelvelabs.io/ko/blog/cutting-edge-isn%E2%80%99t-plug-and-play',
+  tags: ['TwelveLabs', 'FlashAttention-4', 'Training'],
+};
 
 export const navigation = [
   { label: 'About', href: '/' },
