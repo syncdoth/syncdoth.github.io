@@ -18,7 +18,7 @@ const currentYear = new Date().getFullYear();
 <html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#f5f6f8" />
@@ -35,6 +35,8 @@ const currentYear = new Date().getFullYear();
         const savedTheme = localStorage.getItem('portfolio-theme');
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         document.documentElement.dataset.theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+        const themeColor = document.querySelector('meta[name="theme-color"]');
+        if (themeColor) themeColor.content = document.documentElement.dataset.theme === 'dark' ? '#111214' : '#f5f6f8';
       } catch {
         document.documentElement.dataset.theme = 'light';
       }
@@ -83,6 +85,7 @@ const currentYear = new Date().getFullYear();
       function syncThemeButton() {
         const isDark = document.documentElement.dataset.theme === 'dark';
         if (icon) icon.textContent = isDark ? '☼' : '◐';
+        document.querySelector<HTMLMetaElement>('meta[name="theme-color"]')?.setAttribute('content', isDark ? '#111214' : '#f5f6f8');
         toggle?.setAttribute('aria-label', `Switch to ${isDark ? 'light' : 'dark'} appearance`);
       }
 

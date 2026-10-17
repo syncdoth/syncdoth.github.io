@@ -68,6 +68,8 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 6rem;
   background: var(--page);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -95,13 +97,25 @@ a {
   text-underline-offset: 0.2em;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
 button,
 a {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+button,
+.button,
+.theme-toggle,
+.primary-nav a {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    text-decoration: underline;
+  }
 }
 
 button:focus-visible,
@@ -139,6 +153,7 @@ img {
   background: color-mix(in srgb, var(--page) 82%, transparent);
   backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
+  padding-top: env(safe-area-inset-top, 0px);
   transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
@@ -161,11 +176,6 @@ img {
 
 .brand span {
   color: var(--accent);
-}
-
-.brand:hover,
-.footer-name:hover {
-  text-decoration: none;
 }
 
 .primary-nav {
@@ -201,15 +211,29 @@ img {
   transition: transform 180ms ease;
 }
 
-.primary-nav a:hover,
 .primary-nav a[aria-current='page'] {
   color: var(--ink);
   text-decoration: none;
 }
 
-.primary-nav a:hover::after,
 .primary-nav a[aria-current='page']::after {
   transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .brand:hover,
+  .footer-name:hover {
+    text-decoration: none;
+  }
+
+  .primary-nav a:hover {
+    color: var(--ink);
+    text-decoration: none;
+  }
+
+  .primary-nav a:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 .theme-toggle {
@@ -232,21 +256,20 @@ img {
   transition: transform 300ms var(--ease-out);
 }
 
-.theme-toggle:hover [data-theme-icon] {
-  transform: rotate(18deg) scale(1.08);
-}
-
 .theme-toggle:active {
   transform: scale(0.92);
+  transition-duration: 100ms;
 }
 
 .button:active {
   transform: scale(0.97);
+  transition-duration: 100ms;
 }
 
 .page-container {
   width: min(var(--content-width), calc(100% - 3rem));
   min-height: calc(100vh - 15rem);
+  min-height: calc(100svh - 15rem);
   margin: 0 auto;
 }
 
@@ -259,7 +282,7 @@ img {
   display: grid;
   width: min(var(--content-width), calc(100% - 3rem));
   margin: 0 auto;
-  padding: 2.35rem 0 2.8rem;
+  padding: 2.35rem 0 calc(2.8rem + env(safe-area-inset-bottom, 0px));
   grid-template-columns: 1fr auto;
   gap: 0.4rem 2rem;
   align-items: end;
@@ -395,25 +418,10 @@ img {
   transition: transform 180ms var(--ease-out), background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
-.button:hover {
-  transform: translateY(-1px);
-  background: var(--accent-strong);
-  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 22%, transparent);
-  text-decoration: none;
-}
-
 .button-secondary {
   border-color: var(--line);
   color: var(--ink);
   background: var(--surface);
-}
-
-.button-secondary:hover {
-  transform: translateY(-1px);
-  border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
-  color: var(--ink);
-  background: var(--surface);
-  box-shadow: var(--shadow-small);
 }
 
 .button span,
@@ -423,10 +431,31 @@ img {
   transition: transform 180ms var(--ease-out);
 }
 
-.button:hover span,
-.text-link:hover span,
-.inline-link:hover span {
-  transform: translate(2px, -1px);
+@media (hover: hover) and (pointer: fine) {
+  .theme-toggle:hover [data-theme-icon] {
+    transform: rotate(18deg) scale(1.08);
+  }
+
+  .button:hover {
+    transform: translateY(-1px);
+    background: var(--accent-strong);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 22%, transparent);
+    text-decoration: none;
+  }
+
+  .button-secondary:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
+    color: var(--ink);
+    background: var(--surface);
+    box-shadow: var(--shadow-small);
+  }
+
+  .button:hover span,
+  .text-link:hover span,
+  .inline-link:hover span {
+    transform: translate(2px, -1px);
+  }
 }
 
 .pill {
@@ -556,7 +585,7 @@ img {
   transition: transform 500ms var(--ease-out), border-color 220ms ease;
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .hero-visual:hover .portrait-frame {
     transform: rotate(0deg) translateY(-2px);
     box-shadow: 0 28px 76px color-mix(in srgb, var(--ink) 15%, transparent);
@@ -626,8 +655,10 @@ img {
   transition: background-color 220ms ease, border-color 220ms ease;
 }
 
-.interest-card:hover {
-  background: color-mix(in srgb, var(--surface) 62%, transparent);
+@media (hover: hover) and (pointer: fine) {
+  .interest-card:hover {
+    background: color-mix(in srgb, var(--surface) 62%, transparent);
+  }
 }
 
 .interest-card .mono-label {
@@ -887,21 +918,35 @@ img {
   transition: transform 260ms var(--ease-out), border-color 220ms ease, box-shadow 260ms ease, background-color 220ms ease;
 }
 
-.project-card:hover,
-.writing-card:hover {
-  transform: translateY(-4px);
-  border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
-  box-shadow: var(--shadow);
-}
-
 .project-card > a,
 .writing-card > a {
   color: inherit;
 }
 
-.project-card > a:hover,
-.writing-card > a:hover {
-  text-decoration: none;
+.project-card:active,
+.writing-card:active {
+  transform: scale(0.99);
+  transition-duration: 100ms;
+}
+
+.project-card:focus-within,
+.writing-card:focus-within {
+  border-color: color-mix(in srgb, var(--accent) 38%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover,
+  .writing-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
+    box-shadow: var(--shadow);
+  }
+
+  .project-card > a:hover,
+  .writing-card > a:hover {
+    text-decoration: none;
+  }
 }
 
 .project-image {
@@ -913,7 +958,7 @@ img {
   transition: transform 650ms var(--ease-out);
 }
 
-@media (hover: hover) {
+@media (hover: hover) and (pointer: fine) {
   .project-card:hover .project-image {
     transform: scale(1.025);
   }
@@ -1219,43 +1264,63 @@ img {
   .nav-shell,
   .page-container,
   .footer-inner {
-    width: min(100% - 2rem, var(--content-width));
+    width: min(
+      calc(100% - 2rem - env(safe-area-inset-left, 0px) - env(safe-area-inset-right, 0px)),
+      var(--content-width)
+    );
+  }
+
+  html {
+    scroll-padding-top: calc(6rem + env(safe-area-inset-top, 0px));
   }
 
   .nav-shell {
-    min-height: 4.1rem;
-    gap: 1rem;
+    display: grid;
+    min-height: 0;
+    padding: 0.35rem 0;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      'brand theme'
+      'nav nav';
+    gap: 0.1rem 0.75rem;
+  }
+
+  .brand {
+    grid-area: brand;
   }
 
   .primary-nav {
-    overflow-x: auto;
-    justify-content: flex-start;
-    gap: 1.05rem;
-    scrollbar-width: none;
-  }
-
-  .primary-nav::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
+    width: 100%;
+    margin-left: 0;
+    grid-area: nav;
+    justify-content: space-between;
+    gap: 0.2rem;
   }
 
   .primary-nav a {
-    font-size: 0.79rem;
+    display: flex;
+    min-height: 44px;
+    padding: 0.5rem 0.05rem;
+    align-items: center;
+    font-size: clamp(0.75rem, 3.1vw, 0.84rem);
   }
 
   .theme-toggle {
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    grid-area: theme;
   }
 
   .hero {
-    padding-top: 3.7rem;
+    padding-top: 3rem;
     grid-template-columns: 1fr;
-    gap: 2.7rem;
+    gap: 2.2rem;
   }
 
   .hero-copy h1 {
     max-width: 10ch;
-    font-size: clamp(3.25rem, 13vw, 5.1rem);
+    font-size: clamp(3rem, 12vw, 4.5rem);
   }
 
   .hero-visual {
@@ -1272,8 +1337,18 @@ img {
     flex-direction: column;
   }
 
+  .section {
+    margin-top: 3.6rem;
+  }
+
+  .section-heading > .text-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+
   .page-heading {
-    padding: 3.8rem 0 1.8rem;
+    padding: 3.2rem 0 1.8rem;
   }
 
   .page-heading h1 {
@@ -1312,6 +1387,11 @@ img {
     padding-top: 3.6rem;
   }
 
+  .article-back {
+    min-height: 44px;
+    align-items: center;
+  }
+
   .article-header h1 {
     font-size: clamp(2.45rem, 10vw, 3.6rem);
   }
@@ -1336,6 +1416,12 @@ img {
 
   .footer-links {
     justify-content: flex-start;
+  }
+
+  .footer-links a {
+    display: inline-flex;
+    min-height: 40px;
+    align-items: center;
   }
 
   .copyright {
