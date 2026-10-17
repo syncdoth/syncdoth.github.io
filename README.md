@@ -18,6 +18,8 @@ Project and blog frontmatter is checked against schemas in [`src/content.config.
 
 See [`CONTENT.md`](CONTENT.md) for exact templates and guidance on adding a post, project, or record.
 
+The résumé PDF is generated from [`public/assets/pdf/resume.tex`](public/assets/pdf/resume.tex). Rebuild it with `./scripts/build-resume.sh` (requires `pdflatex`).
+
 ## Run locally
 
 Use Node.js 24 (or Node.js 22.12 and newer) and npm:
