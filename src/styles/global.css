@@ -18,6 +18,29 @@
   --shadow: 0 24px 70px rgba(23, 32, 48, 0.12);
   --shadow-small: 0 10px 32px rgba(23, 32, 48, 0.07);
   --content-width: 1120px;
+  --ease-out: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --ease-standard: cubic-bezier(0.2, 0.65, 0.3, 1);
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: page-leave 160ms var(--ease-standard) both;
+}
+
+::view-transition-new(root) {
+  animation: page-enter 280ms var(--ease-out) both;
+}
+
+@keyframes page-leave {
+  to { opacity: 0; }
+}
+
+@keyframes page-enter {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 html[data-theme='dark'] {
@@ -116,6 +139,7 @@ img {
   background: color-mix(in srgb, var(--page) 82%, transparent);
   backdrop-filter: blur(22px) saturate(160%);
   -webkit-backdrop-filter: blur(22px) saturate(160%);
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .nav-shell {
@@ -200,14 +224,22 @@ img {
   background: var(--surface);
   cursor: pointer;
   font-size: 1.15rem;
-  transition: transform 140ms ease, background-color 180ms ease;
+  transition: transform 180ms var(--ease-out), background-color 180ms ease, border-color 180ms ease;
 }
 
-.theme-toggle:hover {
-  transform: rotate(-8deg);
+.theme-toggle [data-theme-icon] {
+  display: block;
+  transition: transform 300ms var(--ease-out);
 }
 
-.theme-toggle:active,
+.theme-toggle:hover [data-theme-icon] {
+  transform: rotate(18deg) scale(1.08);
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
+}
+
 .button:active {
   transform: scale(0.97);
 }
@@ -360,11 +392,13 @@ img {
   background: var(--accent);
   font-size: 0.9rem;
   font-weight: 620;
-  transition: transform 120ms ease, background-color 160ms ease, border-color 160ms ease;
+  transition: transform 180ms var(--ease-out), background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
 }
 
 .button:hover {
+  transform: translateY(-1px);
   background: var(--accent-strong);
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--accent) 22%, transparent);
   text-decoration: none;
 }
 
@@ -375,9 +409,24 @@ img {
 }
 
 .button-secondary:hover {
+  transform: translateY(-1px);
   border-color: color-mix(in srgb, var(--accent) 45%, var(--line));
   color: var(--ink);
   background: var(--surface);
+  box-shadow: var(--shadow-small);
+}
+
+.button span,
+.text-link span,
+.inline-link span {
+  display: inline-block;
+  transition: transform 180ms var(--ease-out);
+}
+
+.button:hover span,
+.text-link:hover span,
+.inline-link:hover span {
+  transform: translate(2px, -1px);
 }
 
 .pill {
@@ -483,6 +532,7 @@ img {
   background: var(--surface-muted);
   box-shadow: var(--shadow);
   transform: rotate(1.5deg);
+  transition: transform 500ms var(--ease-out), box-shadow 300ms ease;
 }
 
 .portrait-frame img {
@@ -491,6 +541,7 @@ img {
   height: 100%;
   object-fit: cover;
   object-position: center 42%;
+  transition: transform 700ms var(--ease-out);
 }
 
 .portrait-accent {
@@ -502,6 +553,23 @@ img {
   border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   border-radius: 2rem;
   background: linear-gradient(155deg, var(--accent-soft), color-mix(in srgb, var(--surface) 30%, transparent));
+  transition: transform 500ms var(--ease-out), border-color 220ms ease;
+}
+
+@media (hover: hover) {
+  .hero-visual:hover .portrait-frame {
+    transform: rotate(0deg) translateY(-2px);
+    box-shadow: 0 28px 76px color-mix(in srgb, var(--ink) 15%, transparent);
+  }
+
+  .hero-visual:hover .portrait-frame img {
+    transform: scale(1.025);
+  }
+
+  .hero-visual:hover .portrait-accent {
+    transform: translate(4px, -3px);
+    border-color: color-mix(in srgb, var(--accent) 52%, transparent);
+  }
 }
 
 .portrait-caption {
@@ -526,9 +594,11 @@ img {
   gap: 1rem;
   align-items: start;
   border: 1px solid var(--line);
-  border-radius: 1.1rem;
+  border-left: 3px solid color-mix(in srgb, var(--accent) 72%, var(--line));
+  border-radius: 0.5rem 1.1rem 1.1rem 0.5rem;
   background: color-mix(in srgb, var(--surface) 80%, transparent);
   box-shadow: var(--shadow-small);
+  transition: background-color 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
 }
 
 .focus-panel .mono-label {
@@ -553,7 +623,7 @@ img {
   padding: 1.25rem;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  transition: background-color 160ms ease;
+  transition: background-color 220ms ease, border-color 220ms ease;
 }
 
 .interest-card:hover {
@@ -814,12 +884,12 @@ img {
   border-radius: 1.2rem;
   background: var(--surface);
   box-shadow: var(--shadow-small);
-  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: transform 260ms var(--ease-out), border-color 220ms ease, box-shadow 260ms ease, background-color 220ms ease;
 }
 
 .project-card:hover,
 .writing-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: color-mix(in srgb, var(--accent) 28%, var(--line));
   box-shadow: var(--shadow);
 }
@@ -840,6 +910,13 @@ img {
   aspect-ratio: 16 / 9;
   object-fit: cover;
   background: var(--surface-muted);
+  transition: transform 650ms var(--ease-out);
+}
+
+@media (hover: hover) {
+  .project-card:hover .project-image {
+    transform: scale(1.025);
+  }
 }
 
 .project-card-content,
@@ -1283,6 +1360,28 @@ img {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.motion-ready [data-reveal] {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.995);
+    transition:
+      opacity 480ms var(--ease-out) var(--reveal-delay, 0ms),
+      transform 620ms var(--ease-out) var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  html.motion-ready [data-reveal='visible'] {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
   }
 }
 

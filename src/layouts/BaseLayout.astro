@@ -97,6 +97,42 @@ const currentYear = new Date().getFullYear();
         }
         syncThemeButton();
       });
+
+      const revealTargets = document.querySelectorAll<HTMLElement>(
+        '.page-heading, .hero, .focus-panel, .section, .article-header, .not-found, .project-card, .writing-card, .publication-item, .timeline-item, .news-list > li',
+      );
+
+      if (
+        revealTargets.length > 0 &&
+        'IntersectionObserver' in window &&
+        window.matchMedia('(prefers-reduced-motion: no-preference)').matches
+      ) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                (entry.target as HTMLElement).dataset.reveal = 'visible';
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -5% 0px' },
+        );
+
+        document.querySelectorAll<HTMLElement>(
+          '.interest-grid, .project-grid, .writing-list, .publication-list, .timeline-list, .news-list',
+        ).forEach((list) => {
+          Array.from(list.children).forEach((item, index) => {
+            (item as HTMLElement).style.setProperty('--reveal-delay', `${Math.min(index, 5) * 55}ms`);
+          });
+        });
+
+        revealTargets.forEach((target) => {
+          target.dataset.reveal = 'pending';
+          observer.observe(target);
+        });
+        document.documentElement.classList.add('motion-ready');
+      }
     </script>
   </body>
 </html>
