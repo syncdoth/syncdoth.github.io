@@ -31,7 +31,7 @@ Build the static site to `dist/` with `npm run build`, then preview that output 
 
 ## Publish
 
-The GitHub Actions workflow builds the site and deploys it to GitHub Pages when changes reach `master` or `main`. Pull requests build the site without publishing it. The repository is named `syncdoth.github.io`, so Astro serves the site from the domain root and keeps the current URL.
+The GitHub Actions workflow builds the site and deploys it to GitHub Pages when changes reach `main`. Pull requests build the site without publishing it. The repository is named `syncdoth.github.io`, so Astro serves the site from the domain root and keeps the current URL.
 
 If GitHub Pages is still configured to deploy from a branch, set **Settings → Pages → Build and deployment → Source** to **GitHub Actions** once. After that, pushes to the default branch publish automatically.
 
